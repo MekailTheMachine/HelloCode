@@ -5,7 +5,7 @@
     <style>
       /* Set background color to black, text color to white, and font to Segoe UI */
       body {
-        background-color: #000;
+        background-color: rgb(111, 255, 152);
         color: #fff;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         display: flex;
@@ -17,13 +17,13 @@
       /* Style the button with a blue background color, rounded corners, and hover effect */
       button {
         padding: 12px 24px;
-        background-color: #0078d7;
+        background-color: #d70081;
         border: none;
         border-radius: 4px;
         font-size: 18px;
         color: #fff;
         cursor: pointer;
-        transition: all 0.2s ease-in-out;
+        transition: all 0.8s ease-in-out;
       }
       button:hover {
         background-color: #005a9e;
@@ -49,15 +49,13 @@
         var message = document.createElement("div");
         message.id = "message";
         message.innerText = "Hello, FrontEnd!";
-        // Append message element to body section of HTML file
         document.body.appendChild(message);
-        // Calculate final position of message element at center of screen
         var endPos = (window.innerWidth / 2) - (message.offsetWidth / 2);
         // Animate message element from left to center of screen
         message.animate(
           [
-            { transform: "translateX(0)" },
-            { transform: "translateX(" + endPos + "px)" },
+            { transform: "translateX(-100%)" },
+            { transform: "translateX(" + endPos + 1 + "px)" },
           ],
           {
             duration: 3000,
