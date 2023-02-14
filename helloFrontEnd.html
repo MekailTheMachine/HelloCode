@@ -6,7 +6,7 @@
       /* Set background color to black, text color to white, and font to Segoe UI */
       body {
         background-color: rgb(111, 255, 152);
-        color: #fff;
+        color: rgb(220, 112, 170);
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         display: flex;
         justify-content: center;
@@ -26,7 +26,7 @@
         transition: all 0.8s ease-in-out;
       }
       button:hover {
-        background-color: #005a9e;
+        background-color: #a71772;
       }
       /* Set initial position of message element to left side of screen, below button */
       #message {
@@ -48,14 +48,14 @@
         // Create new div element with id "message" and text "Hello, FrontEnd!"
         var message = document.createElement("div");
         message.id = "message";
-        message.innerText = "Hello, FrontEnd!";
+        message.innerText = "Happy Valenties Day Love ! ! !";
         document.body.appendChild(message);
         var endPos = (window.innerWidth / 2) - (message.offsetWidth / 2);
         // Animate message element from left to center of screen
         message.animate(
           [
             { transform: "translateX(-100%)" },
-            { transform: "translateX(" + endPos + 1 + "px)" },
+            { transform: "translateX(" + endPos + "px)" },
           ],
           {
             duration: 3000,
