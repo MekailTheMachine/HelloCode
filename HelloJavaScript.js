@@ -9,3 +9,7 @@ Below is Hello Js, in JavaScript */
 
 
 console.log("Hello, JS!");
+
+
+// Sidenote, this was devlpoed on an alternative machine, and the repo and directory can be updated on an alternate machine or the home machine
+// with "git fetch"

@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hello, FrontEnd!</title>
+    <title>Hello, HTML!</title>
     <style>
+      /* Set background color to black, text color to white, and font to Segoe UI */
+      body {
+        background-color: #000;
+        color: #fff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      /* Style the button with a blue background color, rounded corners, and hover effect */
+      button {
+        padding: 12px 24px;
+        background-color: #0078d7;
+        border: none;
+        border-radius: 4px;
+        font-size: 18px;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
+      button:hover {
+        background-color: #005a9e;
+      }
+      /* Set initial position of message element to left side of screen, below button */
       #message {
         position: absolute;
-        top: 50%;
+        top: calc(50% + 20px);
         left: -100px;
         font-size: 30px;
         white-space: nowrap;
@@ -13,14 +39,21 @@
     </style>
   </head>
   <body>
-    <button onclick="displayMessage()">Click me</button>
+    <!-- Create button with text "Click me" and call displayMessage function on click -->
+    <button id="click-me" onclick="displayMessage()">Click me</button>
     <script>
       function displayMessage() {
+        // Hide the button after it has been clicked
+        document.getElementById("click-me").style.display = "none";
+        // Create new div element with id "message" and text "Hello, FrontEnd!"
         var message = document.createElement("div");
         message.id = "message";
-        message.innerText = "Hello, World!";
+        message.innerText = "Hello, FrontEnd!";
+        // Append message element to body section of HTML file
         document.body.appendChild(message);
-        var endPos = window.innerWidth / 2 - message.offsetWidth / 2;
+        // Calculate final position of message element at center of screen
+        var endPos = (window.innerWidth / 2) - (message.offsetWidth / 2);
+        // Animate message element from left to center of screen
         message.animate(
           [
             { transform: "translateX(0)" },
@@ -31,10 +64,10 @@
             easing: "ease-in-out",
           }
         ).onfinish = function() {
+          // Set position of message element to center of screen after animation
           message.style.left = endPos + "px";
         };
       }
     </script>
   </body>
 </html>
-
