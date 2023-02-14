@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, FrontEnd!</title>
+    <style>
+      #message {
+        position: absolute;
+        top: 50%;
+        left: -100px;
+        font-size: 30px;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="displayMessage()">Click me</button>
+    <script>
+      function displayMessage() {
+        var message = document.createElement("div");
+        message.id = "message";
+        message.innerText = "Hello, World!";
+        document.body.appendChild(message);
+        var endPos = window.innerWidth / 2 - message.offsetWidth / 2;
+        message.animate(
+          [
+            { transform: "translateX(0)" },
+            { transform: "translateX(" + endPos + "px)" },
+          ],
+          {
+            duration: 3000,
+            easing: "ease-in-out",
+          }
+        ).onfinish = function() {
+          message.style.left = endPos + "px";
+        };
+      }
+    </script>
+  </body>
+</html>
+
